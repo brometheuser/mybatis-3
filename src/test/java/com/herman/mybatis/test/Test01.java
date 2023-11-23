@@ -35,6 +35,13 @@ public class Test01 {
 
   }
 
+  //
+
+  @Test
+  public void resumeExcutor(){
+
+  }
+
   @Test
   public void batchExcutor() {
     Configuration configuration = null;
