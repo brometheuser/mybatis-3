@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.BaseDataTest;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.io.Resources;
@@ -41,6 +42,8 @@ import org.junit.jupiter.api.Test;
 /**
  * @author liuzh
  */
+
+@Slf4j
 class Jdbc3KeyGeneratorTest {
 
   private static SqlSessionFactory sqlSessionFactory;

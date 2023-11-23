@@ -42,9 +42,13 @@ public class BatchExecutor extends BaseExecutor {
 
   public static final int BATCH_UPDATE_RETURN_VALUE = Integer.MIN_VALUE + 1002;
 
+  //执行语句
   private final List<Statement> statementList = new ArrayList<>();
+  //执行结果
   private final List<BatchResult> batchResultList = new ArrayList<>();
+  //当前正在执行的sql
   private String currentSql;
+  //正在执行的statement
   private MappedStatement currentStatement;
 
   public BatchExecutor(Configuration configuration, Transaction transaction) {

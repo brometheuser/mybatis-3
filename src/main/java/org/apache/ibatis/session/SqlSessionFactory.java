@@ -26,6 +26,7 @@ public interface SqlSessionFactory {
 
   SqlSession openSession();
 
+  //自动提交
   SqlSession openSession(boolean autoCommit);
 
   SqlSession openSession(Connection connection);

@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Properties;
 
+//Resoucres是mybatis的一个类，看看怎么实现的
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.parsing.PropertyParser;
 import org.apache.ibatis.session.Configuration;
@@ -28,12 +30,14 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+@Slf4j
 class XmlMapperTest {
 
   @Test
   void applyDefaultValueOnXmlMapper() throws IOException {
 
     Properties props = new Properties();
+    //  public static final String KEY_ENABLE_DEFAULT_VALUE = KEY_PREFIX + "enable-default-value";
     props.setProperty(PropertyParser.KEY_ENABLE_DEFAULT_VALUE, "true");
 
     Reader reader = Resources.getResourceAsReader("org/apache/ibatis/submitted/global_variables_defaults/mybatis-config.xml");
@@ -41,6 +45,8 @@ class XmlMapperTest {
     Configuration configuration = factory.getConfiguration();
     configuration.addMapper(XmlMapper.class);
     SupportClasses.CustomCache cache = SupportClasses.Utils.unwrap(configuration.getCache(XmlMapper.class.getName()));
+
+    log.info(cache.getName());
 
     Assertions.assertThat(cache.getName()).isEqualTo("default");
 
@@ -83,6 +89,7 @@ class XmlMapperTest {
 
   public interface XmlMapper {
 
+    //ping是什么？
     String ping();
 
     String selectOne();

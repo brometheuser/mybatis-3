@@ -22,9 +22,13 @@ import java.util.Set;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.reflection.ParamNameResolver;
 
 public interface CountryMapper {
+
+  @Select("select * from country limit 1")
+  List<Country> findById(int id);
 
   @Options(useGeneratedKeys = true, keyProperty = "id")
   @Insert({ "insert into country (countryname,countrycode) values (#{countryname},#{countrycode})" })

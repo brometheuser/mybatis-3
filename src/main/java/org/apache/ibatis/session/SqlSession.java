@@ -180,6 +180,7 @@ public interface SqlSession extends Closeable {
    * Execute an insert statement.
    * @param statement Unique identifier matching the statement to execute.
    * @return int The number of rows affected by the insert.
+   * //statement 是什么？语句吗
    */
   int insert(String statement);
 

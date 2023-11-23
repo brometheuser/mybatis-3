@@ -51,6 +51,7 @@ public abstract class BaseExecutor implements Executor {
 
   private static final Log log = LogFactory.getLog(BaseExecutor.class);
 
+  // 事务
   protected Transaction transaction;
   protected Executor wrapper;
 
