@@ -297,6 +297,12 @@
       <artifactId>lombok</artifactId>
       <version>1.18.30</version>
     </dependency>
+    <!--阿里的json-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>2.0.42</version>
+    </dependency>
   </dependencies>
 
   <build>
